@@ -28,6 +28,9 @@ gevent.pywsgi.WSGIHandler.log_request = log_request
 
 app = Bottle()
 
+@app.get('/ping')
+def ping():
+    return 'pong'
 
 @app.route("/smartserver/<filename:path>")
 def assets(filename):
