@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+ 	<head>
+    	<meta charset="utf-8">
+    	<meta content="maximum-scale=1.0,width=device-width,initial-scale=1.0,user-scalable=0" name="viewport">
+    	<title>SmartAT</title> 
+    	<link href="./static/css/bootstrap.css" rel="stylesheet"> 
+    	<link href="./static/css/jquery-ui-1.8.16.custom.css" rel="stylesheet">   
+    	<link href="./static/css/core.css" rel="stylesheet">
+ 	</head>
+
+	<body class="page-index fixed-content">
+
+<head>
+    <meta charset="utf-8">
+    <title>smartServer</title>  
+    <link href="static/css/jquery-ui-1.8.16.custom.css" rel="stylesheet">
+    <link href="static/css/core.css" rel="stylesheet">
+    <link href="static/css/bootstrap.css" rel="stylesheet">
+    <style type="text/css">.hidden{display:none;}.button{cursor:hand;}</style>  
+</head>
+  
+<body  class="page-index full-content">
+
+<div id="surface" class="clearfix" style="height: 786px;">
+    <div id="header">
+        <a title="smartServer" href="index.html" class="header-btn header-logo">
+           <img src="static/img/logo-h.png" heigth="30px" alt="smart server">
+        </a>
+        <div class="header-user">
+           <a href="javascript:logout()" class="header-btn header-help">
+            <span class="header-btn-text">Logout</span> 
+          </a>
+           <a href="javascript:void(0);" class="header-auth member js-open-header-member-menu"> 
+              <span><img id="small-avatar" style="width:20px height:20px" title="" alt=""  class="member-avatar"></span>
+           </a>
+        </div>
+    </div>
+
+    <div class="clearfix" id="content">
+        <div class="board-wrapper disabled-list-guide">
+            <ul class="nav nav-tabs">
+               <li id="tabdeviceslist">
+                <a href="javascript:viewAllDeviceList();">Devices</a>
+              </li>
+            </ul>
+            <div id="devicelist"></div>
+        </div> 
+    </div>
+</div>
+
+  </body>
+  <!-- library js -->
+  <script type="text/javascript" src="./static/js/lib/jquery-1.7.2.min.js"></script>
+  <script type="text/javascript" src="./static/js/lib/jquery.form.js"></script>  
+  <script type="text/javascript" src="./static/js/lib/jquery.cookie.js"></script>
+  <script type="text/javascript" src="./static/js/lib/jquery-ui.js"></script>    
+  <script type="text/javascript" src="./static/js/lib/json2.js"></script>
+  <script type="text/javascript" src="./static/js/lib/bootstrap.js"></script>
+  <script type="text/javascript" src="./static/js/lib/underscore-min.js"></script>
+  <script type="text/javascript" src="./static/js/lib/backbone.js"></script>
+  <!-- application js -->
+  <script type="text/javascript" src="./static/js/app/util.js"></script>
+  <script type="text/javascript" src="./static/js/app/main.js"></script>
+</html>
