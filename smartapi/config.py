@@ -6,6 +6,7 @@ from urlparse import urlparse
 
 __all__ = [ "ZK_URI", "WEB_HOST", "WEB_PORT"]
 
+PI_PATH = "/pi/alive/mac"
 
 ZK_URI = os.getenv("ZK_URI", "127.0.0.1:2181")
 WEB_HOST = os.getenv("WEB_HOST", "")
