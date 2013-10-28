@@ -8,10 +8,30 @@ from zkconn import *
 
 api = Bottle()
 
-@api.route('/devices', method='GET')
+@api.get('/devices')
 def doGetDeviceList():
     """
     """
     rdata = get_devices_list()
     return {"results": rdata}
+
+@api.post('/<ip>/<sn>/start')
+def doStartJob():
+	pass
+
+@api.post('/<ip>/<sn>/stop')
+def doStopJob():
+	pass
+
+@api.post('/<ip>/<sn>/<jid>/stream')
+def doJobStream():
+	pass
+
+@api.delete('/<ip>/<jid>')
+def doDeleteJob():
+	pass
+
+@api.get('/<ip>/jobs')
+def doGetJobs():
+	pass
 

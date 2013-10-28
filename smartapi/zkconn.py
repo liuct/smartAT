@@ -23,6 +23,6 @@ def get_devices_list():
 			#	pi_list.append({'ip': values[0], 'deviceid': values[1],'product': values[2], 'build': values[3] })
 			#else:
 			#	pi_list.append({'ip': values[0], 'deviceid': '','product': '', 'build': ''})
-                        pi_list.append(data)
+			pi_list.append(data)
 	zk.stop()
 	return pi_list
