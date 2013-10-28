@@ -30,6 +30,6 @@ It will read configuration from environment, and use default in case of no defin
 
 Or we can define env in command line:
 
-    $ ZK_URI=192.168.7.212:2181 WEB_PORT=8080 python app.py
+    $ ZK_URI=192.168.7.201:2181 WEB_PORT=8080 python app.py
 
 
