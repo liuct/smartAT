@@ -11,11 +11,10 @@ function render_devicelist(div_id, records){
     var $device_table = $('<table>').attr('class','table table-bordered table-hover');
     var $th =     '<thead><tr>'+
                       '<th width="5%"></th>'+
-                      '<th width="15%">PI</th>'+
-                      '<th width="10%">TAG</th>'+
+                      '<th width="10%">PI#</th>'+
                       '<th width="10%">DUT#</th>'+
-                      '<th width="10%">Platform</th>'+
                       '<th width="10%">Product</th>'+
+                      '<th width="10%">Platform</th>'+
                       '<th width="25%">Build</th>'+
                       '</tr></thead>';
     var $tbody = '<tbody></tbody>';
@@ -35,6 +34,7 @@ function render_devicelist(div_id, records){
         var devices;
         var status;
         var css = 'style="background-color:grey"';
+        var api_uri = "";
         if(api !== undefined) {
             devices = api.devices;
             status = api.status;
@@ -42,8 +42,6 @@ function render_devicelist(div_id, records){
               var dd_list = devices[Platform];
               if(status == "up")
                   css = 'style="background-color:green"';
-              else
-                  css = 'style="background-color:yellow"';
 
               for(var k = 0; k < dd_list.length; k++) {
                   var dd = dd_list[k];
@@ -51,25 +49,23 @@ function render_devicelist(div_id, records){
                   Product = dd.product.model;
                   Build = dd.build.display_id;
                   $tr = "<tr class='info'>"+
-                            "<td "+css+"></td>"+
-                            "<td>"+ip+"</td>"+
-                            "<td>"+mac+"</td>"+
-                            "<td>"+id+"</td>"+
-                            "<td>"+Platform+"</td>"+
-                            "<td>"+Product+"</td>"+
-                            "<td>"+Build+"</td>"+
-                            "</tr>"; 
+                         "<td "+css+"></td>"+    
+                         "<td>"+mac+"</td>"+
+                         "<td>"+id+"</td>"+
+                         "<td>"+Product+"</td>"+                   
+                         "<td>"+Platform+"</td>"+
+                         "<td>"+Build+"</td>"+
+                         "</tr>"; 
                   $device_table.append($tr);
               }
            }
         } else {
                 $tr = "<tr class='info'>"+
                           "<td "+css+"></td>"+
-                          "<td>"+ip+"</td>"+
                           "<td>"+mac+"</td>"+
                           "<td>"+id+"</td>"+
-                          "<td>"+Platform+"</td>"+
                           "<td>"+Product+"</td>"+
+                          "<td>"+Platform+"</td>"+
                           "<td>"+Build+"</td>"+
                           "</tr>";
                 $device_table.append($tr);
