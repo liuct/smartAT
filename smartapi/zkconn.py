@@ -2,6 +2,7 @@
 # -*- coding: utf-8 -*-
 
 import os
+import json
 from config import ZK_URI, PI_PATH
 from kazoo.client import KazooClient
 
@@ -17,12 +18,7 @@ def get_devices_list():
 	subs = zk.get_children(PI_PATH)
 	for sub in subs:
 		data = zk.get(JOIN(PI_PATH, sub))
-		if data is not None:
-			#values = data[0].split(':')
-			#if len(values) > 1:
-			#	pi_list.append({'ip': values[0], 'deviceid': values[1],'product': values[2], 'build': values[3] })
-			#else:
-			#	pi_list.append({'ip': values[0], 'deviceid': '','product': '', 'build': ''})
-			pi_list.append(data)
+		if data is not None and len(data) > 0:
+		    pi_list.append(json.loads(data[0]))
 	zk.stop()
 	return pi_list

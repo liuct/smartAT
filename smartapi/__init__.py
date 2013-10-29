@@ -9,7 +9,7 @@ from zkconn import *
 api = Bottle()
 
 @api.get('/devices')
-def doGetDeviceList():
+def doGetDevices():
     """
     """
     rdata = get_devices_list()
